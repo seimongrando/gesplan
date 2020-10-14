@@ -1,0 +1,40 @@
+version: "3"
+services:
+  
+  api-database:
+    image: mongo:3.2.4
+    container_name: api-database
+    networks:
+         - micro-service-network
+    ports:
+      - 27017:27017
+    command: --smallfiles
+  
+  api-compra21:
+    build: ./compra-21
+    container_name: api-compra21
+    networks:
+         - micro-service-network
+    ports:
+      - 9090:8080
+  
+  api-compra22:
+    build: ./compra-22
+    container_name: api-compra22
+    networks:
+         - micro-service-network
+    ports:
+      - 9091:8080
+    links:
+      - api-database
+
+  api-compra23:
+      build: ./compra-23
+      container_name: api-compra23
+      networks:
+           - micro-service-network
+      ports:
+        - 9092:8080
+
+networks:
+    micro-service-network:       

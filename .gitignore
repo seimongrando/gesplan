@@ -11,7 +11,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -21,3 +20,19 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# IDE config
+**/*.apt_generated
+**/*.classpath
+**/*.factorypath
+**/*.project
+**/*.settings
+**/*.idea
+**/*.DS_Store
+
+# Maven
+**/target
+**/bin
+**/.bin
+**/*.class
+/package-lock.json
